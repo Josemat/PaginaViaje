@@ -1,0 +1,28 @@
+extends ./layout/index
+block slider 
+    .slider 
+        h1 Rio de Janeiro 
+        em aventura
+block contenido
+    main.container.mt-5
+        h2.text-center.mb-5 Sobre nosotros
+        .row.mb-5
+            .col-md-6
+                p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam eligendi, minus quod assumenda voluptates tenetur laudantium accusamus reprehenderit in consequatur similique aperiam repellat veniam voluptatem magni pariatur ratione cumque ut qui ipsa nam. Hic tempora nostrum molestias dignissimos nisi corporis totam error voluptates iure beatae expedita pariatur quas maxime assumenda eveniet maiores.
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea modi dignissimos, excepturi doloribus quis, vero ducimus consequatur architecto ipsam impedit veniam quasi! Molestias ea repellendus tempora saepe qui exercitationem? Nobis temporibus perferendis minus obcaecati quo, nesciunt quis cum impedit, distinctio asperiores deserunt quisquam iste voluptate id? Reprehenderit aliquid excepturi optio!
+            .col-md-6
+                img(src="/img/inicio_nosotros.jpg", alt="imagen de nosotros" class="img-fluid")
+        include ./layout/bloque_viaje
+    
+    .descuento
+        .container
+            .row
+                .col-md-6
+                    .contenido
+                        h3 5% de Descuento
+                        p.titulo Viaje a bariloche
+                        p.fecha 20 de julio de 2022 - 15 agosto de 2022
+                        p.precio $1500 USD
+    .container
+        h2.mt-5.text-center Testimoniales
+        include ./layout/bloque_testimoniales
