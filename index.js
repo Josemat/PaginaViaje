@@ -16,9 +16,7 @@ db.authenticate()
         .catch((error)=>console.log(error));
 
 
-// Definir puerto
-const host = process.env.HOST || '0.0.0.0';
-const port = process.env.PORT || 4000;
+
 //Habilitar PUG
 app.set('view engine','pug')
 
@@ -29,7 +27,7 @@ app.use((req, res, next)=>{
     const newYear = new Date();
     res.locals.actualYear = newYear.getFullYear()
     res.locals.nombreSitio = 'Agencia de viajes'
-    next() //con next o return next obligamos a que siga ejecutando
+    return next() //con next o return next obligamos a que siga ejecutando
 })
 
 //Agregar body parser para leer los datos del form
@@ -40,6 +38,9 @@ app.use(express.static('public'))
 // Agregar router
 app.use('/', router)
 
+// Definir puerto
+const host = process.env.HOST || '0.0.0.0';
+const port = process.env.PORT || 4000;
 
 app.listen(port,host,()=>{
     console.log(`El servidor está funcionando en el host: ${host} y el puerto ${port}`)
