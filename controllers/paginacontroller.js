@@ -1,7 +1,7 @@
 import { Viaje } from "../models/Viaje.js";
 import { Testimonial } from "../models/Testimoniales.js";
 
-const paginaInicio =async (req,res)=>{//req(request) lo que enviamos | res(response) lo que express nos responde
+const paginaInicio = async (req,res)=>{//req(request) lo que enviamos | res(response) lo que express nos responde
     //Consultar 3 viajes del modelo viaje
     const promiseDB = [];
     promiseDB.push(Viaje.findAll({ limit:3 }))
