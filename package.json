@@ -18,8 +18,5 @@
     "sequelize": "^6.18.0",
     "dotenv": "^16.0.0",
     "nodemon": "^2.0.15"
-  },
-  "devDependencies": {
-    
   }
 }
