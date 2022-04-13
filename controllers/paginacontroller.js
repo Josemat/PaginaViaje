@@ -10,7 +10,7 @@ const paginaInicio = async (req,res)=>{//req(request) lo que enviamos | res(resp
     try {
         const resultado = await Promise.all(promiseDB)
 
-        res.render('..server/views/inicio',{
+        res.render('inicio',{
             pagina: 'Inicio',
             clase: 'home',
             viajes: resultado[0],
@@ -32,7 +32,7 @@ const paginaViajes = async (req,res)=>{
     //Aca consultamos la DB
     const viajes = await Viaje.findAll();
     
-    res.render('../server/views/viajes',{
+    res.render('viajes',{
         pagina: 'Viajes',
         viajes
     });
@@ -41,7 +41,7 @@ const paginaTestimoniales = async (req,res)=>{
 
     try {
         const testimoniales = await Testimonial.findAll();
-        res.render('../server/views/testimoniales',{
+        res.render('testimoniales',{
             pagina: 'Testimonios',
             testimoniales
         });
@@ -57,7 +57,7 @@ const paginaDetalleViajes = async (req, res)=>{
     const {slug} = req.params
     try {
         const resultado = await Viaje.findOne({where : {slug}})
-        res.render('../server/views/viaje',{
+        res.render('viaje',{
             pagina:'Informacion Viaje',
             resultado
         })
