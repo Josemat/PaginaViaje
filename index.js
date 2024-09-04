@@ -41,6 +41,8 @@ app.use('/', router)
 // Definir puerto
 const host = process.env.HOST || '0.0.0.0';
 const port = process.env.PORT || 4000;
+console.log(host)
+console.log(port)
 
 app.listen(port,host,()=>{
     console.log(`El servidor está funcionando en el host: ${host} y el puerto ${port}`)
