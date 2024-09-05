@@ -5,7 +5,7 @@ import express from 'express';
 import router from  './routes/index.js'
 import db from './config/db.js';
 import dotenv from 'dotenv';
-dotenv.config({path:"variables.env"});
+dotenv.config();
 
 
 const app = express();
@@ -39,11 +39,9 @@ app.use(express.static('public'))
 app.use('/', router)
 
 // Definir puerto
-const host = process.env.HOST || '0.0.0.0';
-const port = process.env.PORT || 4000;
-console.log(host)
+const port = process.env.PORT || 3000;
 console.log(port)
 
 app.listen(port,host,()=>{
-    console.log(`El servidor está funcionando en el host: ${host} y el puerto ${port}`)
+    console.log(`El servidor está funcionando en el puerto ${port}`)
 })
